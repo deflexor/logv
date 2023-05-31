@@ -38,17 +38,17 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 
-		// uncomment the following to enable URLs in path-format
-		/*
-		'urlManager'=>array(
-			'urlFormat'=>'path',
-			'rules'=>array(
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-			),
-		),
-		*/
+        'urlManager' => array(
+            'urlFormat' => 'path',
+            'rules' => array(
+                // Route for user login
+                'user/login' => 'user/login',
+                // Route for user logout
+                'user/logout' => 'user/logout',
+                // Route for secure API actions
+                'api/<action:\w+>' => 'api/<action>',
+            ),
+        ),
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
